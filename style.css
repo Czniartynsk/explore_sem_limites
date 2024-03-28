@@ -26,6 +26,13 @@ main{
 
 #astronaut{
   height: 37rem;
+
+  transition-duration: .7s;
+  transition-timing-function: ease;
+}
+
+#astronaut:hover {
+  transform: scale(1.1);
 }
 
 main h1 {
@@ -47,7 +54,7 @@ main p {
   margin-top: 3.5rem;
 }
 
-section{
+.section-cards{
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
@@ -63,6 +70,21 @@ figure{
   border-radius: 2rem;
 
   min-width: 31.2rem;
+
+  --delay: 1.2s;
+  --startX: -300%;
+  animation: move .3s var(--delay) backwards;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--startX));
+  }
+
+  70% {
+    opacity: 100%;
+  }
 }
 
 figure figcaption {
@@ -154,7 +176,7 @@ button{
   color: var(--branco)
 }
 
-.area-contact img{
+.section-contact img{
   width: 0%;
 }
 
@@ -193,14 +215,14 @@ footer p{
     margin: auto 0;
   }
 
-  section {
+  .section-cards {
     display: flex;
     flex-wrap: wrap;
 
     justify-content: center;
   }
 
-  .area-contact {
+  .section-contact {
     display: flex;
   }
 
@@ -208,7 +230,7 @@ footer p{
     padding: 9.5rem 11rem 9rem;
   }
 
-  .area-contact img{
+  .section-contact img{
     width: 45%;
     object-fit: cover;
   }
@@ -234,4 +256,8 @@ footer p{
   .title-wrapper p {
     font-size: 3.2rem;
   }
+}
+
+@keyframes float {
+
 }
